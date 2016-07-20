@@ -2,19 +2,12 @@ package main
 
 import "fmt"
 
-func main() {
+func main2() {
 	fmt.Println("result: ", mergesort([]int{7, 2, 6, 5, 4, 9, 8, 3}))
 }
 
 func mergesort(a []int) []int {
 	if len(a) == 1 {
-		return a
-	} else if len(a) == 2 {
-		if a[0] > a[1] {
-			tmp := a[0]
-			a[0] = a[1]
-			a[1] = tmp
-		}
 		return a
 	}
 
