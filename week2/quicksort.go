@@ -38,12 +38,19 @@ func partitionArray(A []int, l int, r int) []int {
 	if len(A) < 2 {
 		return A
 	}
+	// else if len(A) == 2 {
+	// 	fmt.Println("Only 2!", A)
+	// 	if A[1] < A[0] {
+	// 		A[0], A[1] = A[1], A[0]
+	// 		return A
+	// 	}
+	// }
 
 	// don't use anything when pivot is the first element
 	//p := A[l]
 
 	// use this when pivot is the last element
-	A[r-1], A[l] = A[l], A[r-1]
+	//A[r-1], A[l] = A[l], A[r-1]
 	p := A[l]
 
 	// "median" pivot
@@ -53,10 +60,10 @@ func partitionArray(A []int, l int, r int) []int {
 	// }
 	// pivots := []int{A[l], A[r-1], A[median]}
 	// p := pivots[0]
-	// if pivots[1] < pivots[2] && pivots[1] < pivots[0] {
+	// if (pivots[2] > pivots[1] && pivots[1] > pivots[0]) || (pivots[2] < pivots[1] && pivots[1] < pivots[0]) {
 	// 	p = pivots[1]
 	// 	A[r-1], A[l] = A[l], A[r-1]
-	// } else if pivots[2] < pivots[1] && pivots[2] < pivots[0] {
+	// } else if (pivots[2] < pivots[1] && pivots[2] > pivots[0]) || (pivots[2] > pivots[1] && pivots[2] < pivots[0]) {
 	// 	p = pivots[2]
 	// 	A[median], A[l] = A[l], A[median]
 	// }
