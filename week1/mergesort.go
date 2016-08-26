@@ -5,14 +5,15 @@ func Mergesort(a []int) []int {
 	if len(a) == 1 {
 		return a
 	}
-	return merge(len(a), Mergesort(a[0:len(a)/2]), Mergesort(a[len(a)/2:]))
+	return Merge(Mergesort(a[0:len(a)/2]), Mergesort(a[len(a)/2:]))
 }
 
-func merge(n int, b []int, c []int) []int {
+// Merge combines two arrays
+func Merge(b []int, c []int) []int {
 	var a []int
 	i, j := 0, 0
 
-	for k := 0; k < n; {
+	for {
 		// check if out of bounds
 		if i == len(b) {
 			a = append(a, c[j:]...)
